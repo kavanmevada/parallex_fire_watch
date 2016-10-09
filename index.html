@@ -41,15 +41,15 @@
 
   function parallaxbubbles(){
    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
-   page.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
-   layer1.style.transform = 'translateY('+ (-scrolltop / 8) + 'px)' // move bubble1 at 20% of scroll rate
-   layer2.style.transform = 'translateY('+ (-scrolltop / 7) + 'px)' // move bubble1 at 20% of scroll rate
-   layer3.style.transform = 'translateY('+ (-scrolltop / 6) + 'px)' // move bubble1 at 20% of scroll rate
-   layer4.style.transform = 'translateY('+ (-scrolltop / 5) + 'px)' // move bubble1 at 20% of scroll rate
-   layer5.style.transform = 'translateY('+ (-scrolltop / 4) + 'px)' // move bubble1 at 20% of scroll rate
-   layer6.style.transform = 'translateY('+ (-scrolltop / 3) + 'px)' // move bubble1 at 20% of scroll rate
-   layer7.style.transform = 'translateY('+ (-scrolltop / 2) + 'px)' // move bubble1 at 20% of scroll rate
-   layer8.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
+   page.style.transform = 'translateY('+ (-scrolltop / 1)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer1.style.transform = 'translateY('+ (-scrolltop / 8)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer2.style.transform = 'translateY('+ (-scrolltop / 7)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer3.style.transform = 'translateY('+ (-scrolltop / 6)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer4.style.transform = 'translateY('+ (-scrolltop / 5)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer5.style.transform = 'translateY('+ (-scrolltop / 4)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer6.style.transform = 'translateY('+ (-scrolltop / 3)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer7.style.transform = 'translateY('+ (-scrolltop / 2)/10 + '%)' // move bubble1 at 20% of scroll rate
+   layer8.style.transform = 'translateY('+ (scrolltop / 1)/10 + '%)' // move bubble1 at 20% of scroll rate
   }
 
   function debounce(func, wait, immediate) {

@@ -19,7 +19,7 @@ body{
  position: absolute;
  background-position: top;
  background-size: cover;
- transition: all 0.1s;
+ transition: all 0.3s;
 }
 
 .img1 {
