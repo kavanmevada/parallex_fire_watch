@@ -41,21 +41,39 @@
 
   function parallaxbubbles(){
    var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
-   layer8.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
-   layer7.style.transform = 'translateY('+ (-scrolltop / 2) + 'px)' // move bubble1 at 20% of scroll rate
-   layer6.style.transform = 'translateY('+ (-scrolltop / 3) + 'px)' // move bubble1 at 20% of scroll rate
-   layer5.style.transform = 'translateY('+ (-scrolltop / 4) + 'px)' // move bubble1 at 20% of scroll rate
-   layer4.style.transform = 'translateY('+ (-scrolltop / 5) + 'px)' // move bubble1 at 20% of scroll rate
-   layer3.style.transform = 'translateY('+ (-scrolltop / 6) + 'px)' // move bubble1 at 20% of scroll rate
-   layer2.style.transform = 'translateY('+ (-scrolltop / 7) + 'px)' // move bubble1 at 20% of scroll rate
-   layer1.style.transform = 'translateY('+ (-scrolltop / 8) + 'px)' // move bubble1 at 20% of scroll rate
-
    page.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
+   layer1.style.transform = 'translateY('+ (-scrolltop / 8) + 'px)' // move bubble1 at 20% of scroll rate
+   layer2.style.transform = 'translateY('+ (-scrolltop / 7) + 'px)' // move bubble1 at 20% of scroll rate
+   layer3.style.transform = 'translateY('+ (-scrolltop / 6) + 'px)' // move bubble1 at 20% of scroll rate
+   layer4.style.transform = 'translateY('+ (-scrolltop / 5) + 'px)' // move bubble1 at 20% of scroll rate
+   layer5.style.transform = 'translateY('+ (-scrolltop / 4) + 'px)' // move bubble1 at 20% of scroll rate
+   layer6.style.transform = 'translateY('+ (-scrolltop / 3) + 'px)' // move bubble1 at 20% of scroll rate
+   layer7.style.transform = 'translateY('+ (-scrolltop / 2) + 'px)' // move bubble1 at 20% of scroll rate
+   layer8.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
   }
 
-  window.addEventListener('scroll', function(){ // on page scroll
-   requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
-  }, false)
+  function debounce(func, wait, immediate) {
+  	var timeout;
+  	return function() {
+  		var context = this, args = arguments;
+  		var later = function() {
+  			timeout = null;
+  			if (!immediate) func.apply(context, args);
+  		};
+  		var callNow = immediate && !timeout;
+  		clearTimeout(timeout);
+  		timeout = setTimeout(later, wait);
+  		if (callNow) func.apply(context, args);
+  	};
+  };
+
+  var myEfficientFn = debounce(function() {
+	// All the taxing stuff you do
+}, 500);
+
+window.addEventListener('scroll',  function(){ // on page scroll
+ requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+}, false);
 
   </script>
   </body>
