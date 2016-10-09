@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="container">
+      <div id="layer1" class="cover img1"></div>
+      <div id="layer2" class="cover img2"></div>
+      <div id="layer3" class="cover img3"></div>
+      <div id="layer4" class="cover img4"></div>
+      <div id="layer5" class="cover img5"></div>
+      <div id="layer6" class="cover img6"></div>
+      <div id="layer7" class="cover img7"></div>
+      <div id="layer8" class="cover img8"></div>
+    </div>
+    <div id="pa_page" class="container kk">
+      kavan
+    </div>
+
+  <script>
+
+  // Create cross browser requestAnimationFrame method:
+  window.requestAnimationFrame = window.requestAnimationFrame
+   || window.mozRequestAnimationFrame
+   || window.webkitRequestAnimationFrame
+   || window.msRequestAnimationFrame
+   || function(f){setTimeout(f, 1000/60)}
+
+  var layer1 = document.getElementById('layer1'),
+      layer2 = document.getElementById('layer2'),
+      layer3 = document.getElementById('layer3'),
+      layer4 = document.getElementById('layer4'),
+      layer5 = document.getElementById('layer5'),
+      layer6 = document.getElementById('layer6'),
+      layer7 = document.getElementById('layer7'),
+      layer8 = document.getElementById('layer8'),
+      page = document.getElementById('pa_page')
+
+  function parallaxbubbles(){
+   var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically
+   layer8.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
+   layer7.style.transform = 'translateY('+ (-scrolltop / 2) + 'px)' // move bubble1 at 20% of scroll rate
+   layer6.style.transform = 'translateY('+ (-scrolltop / 3) + 'px)' // move bubble1 at 20% of scroll rate
+   layer5.style.transform = 'translateY('+ (-scrolltop / 4) + 'px)' // move bubble1 at 20% of scroll rate
+   layer4.style.transform = 'translateY('+ (-scrolltop / 5) + 'px)' // move bubble1 at 20% of scroll rate
+   layer3.style.transform = 'translateY('+ (-scrolltop / 6) + 'px)' // move bubble1 at 20% of scroll rate
+   layer2.style.transform = 'translateY('+ (-scrolltop / 7) + 'px)' // move bubble1 at 20% of scroll rate
+   layer1.style.transform = 'translateY('+ (-scrolltop / 8) + 'px)' // move bubble1 at 20% of scroll rate
+
+   page.style.transform = 'translateY('+ (-scrolltop / 1) + 'px)' // move bubble1 at 20% of scroll rate
+  }
+
+  window.addEventListener('scroll', function(){ // on page scroll
+   requestAnimationFrame(parallaxbubbles) // call parallaxbubbles() on next available screen paint
+  }, false)
+
+  </script>
+  </body>
+</html>
