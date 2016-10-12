@@ -56,4 +56,5 @@ body{
   z-index: 8;
   margin-top: -100px;
   background-color: #02002b;
+  transition: all 0.3s;
 }
