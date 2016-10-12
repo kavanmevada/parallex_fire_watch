@@ -54,7 +54,6 @@ body{
 
 .kk {
   z-index: 8;
-  transition: all 0s;
   margin-top: -100px;
   background-color: #02002b;
 }
